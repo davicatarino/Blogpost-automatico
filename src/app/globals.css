@@ -12,7 +12,7 @@
     transform: translateY(20px);
   }
   to {
-    opacity: 1;
+    opacity: 2;
     transform: translateY(0);
   }
 }
@@ -27,4 +27,28 @@
 
 .animation-delay-400 {
   animation-delay: 0.4s;
+}
+
+@layer utilities {
+  .text-outline-black {
+    text-shadow:
+      -1px -1px 0 #515ae5,
+       1px -1px 0 #515ae5,
+      -1px  1px 0 #515ae5,
+       1px  1px 0 #515ae5;
+  }
+  .text-outline-black-sm {
+    text-shadow:
+      -0.5px -0.5px 0 #515ae5,
+       0.5px -0.5px 0 #515ae5,
+      -0.5px  0.5px 0 #515ae5,
+       0.5px  0.5px 0 #515ae5;
+  }
+  .text-outline-white {
+    text-shadow:
+      -2px -2px 0 #fff,
+       2px -2px 0 #fff,
+      -2px  2px 0 #fff,
+       2px  2px 0 #fff;
+  }
 }

@@ -2,8 +2,7 @@ import openai from './openAiClient';
 import * as fs from 'fs';
 import * as path from 'path';
 import { scrapeG1 } from './scrape';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+
 
 // Definir tipos
 interface Article {
@@ -13,8 +12,8 @@ interface Article {
   localImage: string;
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = require.main?.filename || '';
+const __dirname = path.dirname(__filename);
 
 const BLOG_POSTS_DIR = './../../_posts';
 
@@ -44,7 +43,7 @@ async function generatePostContent(title: string, description: string, link: str
     const response = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [
-        { role: 'system', content: 'Você é um assistente que resume as noticias em 50% em formato de blogpost. Não gere titulo e nem marcações de texto, imprima somente texto puro do resumo das matérias. Não utilize * para marcação em negrito.' },
+        { role: 'system', content: 'Você é um assistente que resume as noticias em 50% em formato de blogpost. Não gere titulo e nem marcações de texto, imprima somente texto puro do resumo das matérias. Não utilize * para marcação em negrito. adicione ao final da matéria a fonte (link da matéria).' },
         { role: 'user', content: prompt },
       ],
       max_tokens: 300,
@@ -101,7 +100,7 @@ ${content}
  */
 export async function main(): Promise<void> {
   const articles: Article[] = await scrapeG1();
-
+console.log("scrape realizado");
   // Limita a busca a 2 artigos por vez
   const articlesToProcess = articles.slice(0, 2);
 

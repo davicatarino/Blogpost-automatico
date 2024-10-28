@@ -1,15 +1,19 @@
-import cron from 'node-cron';
-import { main as generatePost } from './generatePost';
+// scheduler.ts
+import { schedule } from 'node-cron';
+import * as dotenv from 'dotenv';
+import {main}  from './generatePost';
+dotenv.config();
 
-// Agendar a geração de 2 posts a cada 5 minutos
-cron.schedule('*/2 * * * *', async () => {
-  console.log('Iniciando geração automática de posts a cada 5 minutos...');
+// Agendar para executar a cada 6 horas
+schedule('*/1 * * * *', async () => {
+  console.log('Iniciando a geração de posts...');
   try {
-    await generatePost();
-    console.log('Posts gerados com sucesso.');
+    await main();
+    console.log('Geração de posts concluída com sucesso.');
   } catch (error) {
-    console.error('Erro ao gerar posts automaticamente:', error);
+    console.error('Erro na geração de posts:', error);
   }
 });
 
-console.log('Cron job configurado para rodar a cada 5 minutos.');
+// Manter o processo ativo
+console.log('Scheduler iniciado. Aguardando a próxima execução...');

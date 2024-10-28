@@ -2,15 +2,18 @@ import React from 'react'
 
 export default function HeroSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('./../../public/assets/background.jpg')] bg-no-repeat bg-contain">
-      <div className="container px-4 md:px-6 mx-auto">
+    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('./../../public/assets/escura.png')] bg-no-repeat bg-cover">
+      <div className="container px-4 md:px-6 mx-auto mt-12">
         <div className="flex flex-col items-center space-y-4 text-center">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white animate-fade-in-up">
-              Descubra a Paz Interior com Tour No Stress
+            <h1 className="text-4xl text-outline-black font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white animate-fade-in-up">
+             Tour No Stress
+            </h1>
+            <h1 className="text-4xl text-outline-black font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white animate-fade-in-up">
+              Seu Melhor Caminho Para a Gestão do Stress
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl animate-fade-in-up animation-delay-200">
-              Transforme sua vida com o poder da massagem expressa. Combata o estresse e encontre o equilíbrio em minutos.
+            Quer melhorar sua saúde e bem-estar? Acompanhe nosso blog para receber dicas práticas e informações atualizadas que ajudarão você a reduzir o estresse e viver com mais qualidade de vida.
             </p>
           </div>
           <div className="space-x-4 animate-fade-in-up animation-delay-400">

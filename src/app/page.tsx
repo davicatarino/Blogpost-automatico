@@ -1,10 +1,11 @@
 import Container from "./_components/container";
 import { MoreStories } from "./_components/more-stories";
 import { getAllPosts } from "./../lib/api";
-import './globals.css';
+
 import HeroSection from './_components/HeroSection';
 import AboutSection from './_components/AboutSection';
 import BenefitsSection from './_components/BenefitsSextion';
+import ExpressMassageSection from './_components/MecsSection';
 
 // Este componente agora é renderizado no servidor
 export default async function Index() {
@@ -20,8 +21,9 @@ export default async function Index() {
       <Container>
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-      <AboutSection/>
-      <BenefitsSection/>
+    {/*   <AboutSection/>
+      <BenefitsSection/> */}
+      <ExpressMassageSection/>
     </main>
   );
 }

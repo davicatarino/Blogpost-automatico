@@ -4,22 +4,25 @@
     "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "target": "ES2017",
+    "target": "ES2020",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "ESNext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
-    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "module": "esnext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -27,7 +30,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "noEmit": true
   },
   "include": [
     "next-env.d.ts",
@@ -35,7 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/**/*.ts",
-    "src/tailwind.config.ts"  // Inclui o arquivo de configuração Tailwind fora de 'src'
+    "src/tailwind.config.ts" // Inclui o arquivo de configuração Tailwind fora de 'src'
   ],
   "exclude": [
     "node_modules",

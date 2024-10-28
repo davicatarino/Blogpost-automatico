@@ -1,11 +1,19 @@
 {
-  "scripts": {
+    "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "scrape": "node scrape.js",
-    "build-post": "tsc ./generatePost.ts",
-    "generate-post": "ts-node ./generatePost.ts"
+    "build-post": "tsc ./src/lib/generatePost.ts",
+    "build-scheduler": "tsc ./src/lib/schedule.ts",
+    "generate-post": "ts-node ./generatePost.ts",
+    "start-scheduler": "ts-node ./src/lib/schedule.js",
+    "pm2-start-scheduler": "pm2 start ecosystem.config.js",
+    "stop-scheduler": "pm2 stop post-scheduler",
+    "restart-scheduler": "pm2 restart post-scheduler",
+    "delete-scheduler": "pm2 delete post-scheduler",
+    "save-pm2": "pm2 save",
+    "startup-pm2": "pm2 startup"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -28,7 +36,7 @@
     "swiper": "^11.1.14"
   },
   "devDependencies": {
-    "@types/node": "^20.14.8",
+    "@types/node": "^20.17.2",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
