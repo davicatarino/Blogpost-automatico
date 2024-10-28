@@ -10,9 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'hero1': "url('./../../public/assets/background.jpg')",
+        'hero2': "url('./../../public/assets/background2.webp')",
       },
       colors: {
         "accent-1": "#FAFAFA",

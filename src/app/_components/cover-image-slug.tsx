@@ -8,16 +8,16 @@ type Props = {
   slug?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImageSlug = ({ title, src, slug }: Props) => {
   const image = (
     <Image
     src={src}
     alt={`Cover Image for ${title}`}
-    className={cn("shadow-sm h-[300px] w-[300px]", {
+    className={cn("shadow-sm ", {
       "hover:shadow-lg transition-shadow duration-200 conta": slug,
     })}
-    width={300}
-    height={300}
+    width={700}
+    height={400}
   />
 
   );
@@ -34,4 +34,4 @@ const CoverImage = ({ title, src, slug }: Props) => {
   );
 };
 
-export default CoverImage;
+export default CoverImageSlug;

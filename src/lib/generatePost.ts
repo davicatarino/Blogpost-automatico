@@ -44,10 +44,10 @@ async function generatePostContent(title: string, description: string, link: str
     const response = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [
-        { role: 'system', content: 'Você é um assistente que resume notícias para blogs. Não gere titulo e nem marcações de texto, imprima somente texto puro do resumo das matérias.' },
+        { role: 'system', content: 'Você é um assistente que resume as noticias em 50% em formato de blogpost. Não gere titulo e nem marcações de texto, imprima somente texto puro do resumo das matérias. Não utilize * para marcação em negrito.' },
         { role: 'user', content: prompt },
       ],
-      max_tokens: 500,
+      max_tokens: 300,
       temperature: 0.5,
     });
 
