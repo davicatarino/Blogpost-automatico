@@ -22,8 +22,8 @@ export default function Intro() {
       <span className="ml-2 text-2xl font-bold text-primary">Tour No Stress</span>
     </a>
     <nav className={`ml-auto ${isMenuOpen ? 'flex' : 'hidden'} md:flex gap-4 sm:gap-6`}>
-      <a className="text-sm font-medium hover:text-primary transition-colors" href="#about">Sobre</a>
-      <a className="text-sm font-medium hover:text-primary transition-colors" href="#benefits">Benefícios</a>
+      <a className="text-sm font-medium hover:text-primary transition-colors" href="#blog">Notícias</a>
+      <a className="text-sm font-medium hover:text-primary transition-colors" href="#mecs">MECS!</a>
       <a className="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contato</a>
     </nav>
     <button className="ml-auto md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>

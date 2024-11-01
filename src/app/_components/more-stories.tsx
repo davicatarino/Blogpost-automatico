@@ -16,7 +16,7 @@ interface ArrowProps {
 const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute -left-4 top-[96%] transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none z-10"
+    className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none z-10"
     aria-label="Anterior"
   >
     {/* Ícone de seta esquerda */}
@@ -30,7 +30,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
 const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute -right-4 top-[96%] transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none z-10"
+    className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none z-10"
     aria-label="Próximo"
   >
     {/* Ícone de seta direita */}
@@ -85,7 +85,7 @@ export function MoreStories({ posts }: Props) {
   };
 
   return (
-    <section className="relative text-center">
+    <section id='blog' className="relative text-center">
       <h2 className="mb-8 mt-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
         Notícias da Saúde
       </h2>

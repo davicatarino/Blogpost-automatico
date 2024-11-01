@@ -1,3 +1,5 @@
+// src/lib/api.ts
+
 import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
@@ -6,12 +8,19 @@ import { join } from "path";
 const postsDirectory = join(process.cwd(), "_posts");
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  // Filtra apenas arquivos com extensão .md
+  return fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
 }
 
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
+
+  // Verifica se o arquivo existe antes de tentar lê-lo
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Post não encontrado: ${fullPath}`);
+  }
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -22,7 +31,7 @@ export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    // sort posts by date in descending order
+    // Ordena os posts por data em ordem decrescente
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }

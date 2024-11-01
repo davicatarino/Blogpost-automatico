@@ -1,6 +1,6 @@
 import CoverImage from "./cover-image";
 
-import Link from "next/link";
+import Link from "next/link.js";
 import DateFormatter from "./date-formatter";
 import React from 'react';
 

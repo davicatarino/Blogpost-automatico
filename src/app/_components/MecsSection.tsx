@@ -3,7 +3,7 @@ import BenefitsSection from './BenefitsSextion'
 
 export default function ExpressMassageSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600/5 via-gray-50 to-blue-600/5">
+    <section id='mecs' className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600/5 via-gray-50 to-blue-600/5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-blue-600 sm:text-4xl mb-4">
@@ -70,7 +70,7 @@ export default function ExpressMassageSection() {
         </div>
         <BenefitsSection/>
 
-        <div className="text-center">
+      {/*   <div className="text-center">
           <h3 className="text-2xl font-bold mb-4">Pronto para transformar vidas, incluindo a sua?</h3>
           <button className="text-lg px-8 py-3 bg-blue-600 text-white font-bold rounded-lg">
             Comece Sua Jornada Agora
@@ -78,7 +78,7 @@ export default function ExpressMassageSection() {
           <p className="mt-4 text-sm text-gray-500">
             Vagas limitadas! Garanta já o seu lugar nesta experiência transformadora.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   )

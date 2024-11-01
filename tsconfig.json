@@ -8,7 +8,7 @@
         "./src/*"
       ]
     },
-    "target": "ES2020",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -16,12 +16,13 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": false,
+    "forceConsistentCasingInFileNames": false,
     "incremental": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -31,7 +32,7 @@
         "name": "next"
       }
     ],
-    "noEmit": true
+    "noEmit": false
   },
   "include": [
     "next-env.d.ts",

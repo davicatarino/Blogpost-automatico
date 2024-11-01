@@ -13,17 +13,17 @@ export default function HeroSection() {
               Seu Melhor Caminho Para a Gestão do Stress
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl animate-fade-in-up animation-delay-200">
-            Quer melhorar sua saúde e bem-estar? Acompanhe nosso blog para receber dicas práticas e informações atualizadas que ajudarão você a reduzir o estresse e viver com mais qualidade de vida.
+           Sua saúde é nosso compromisso! Acompanhe o blog para receber dicas práticas e informações que ajudarão você a reduzir o Estresse e viver com mais Qualidade de Vida.
             </p>
           </div>
-          <div className="space-x-4 animate-fade-in-up animation-delay-400">
+       {/*    <div className="space-x-4 animate-fade-in-up animation-delay-400">
             <button className="px-4 py-2 bg-white text-primary hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 rounded-md font-medium">
               Comece Agora
             </button>
             <button className="px-4 py-2 bg-transparent text-white border border-white hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 rounded-md font-medium">
               Saiba Mais
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

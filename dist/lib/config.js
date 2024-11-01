@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.configureEnv = configureEnv;
-var dotenv = require("dotenv");
-function configureEnv() {
+import * as dotenv from 'dotenv';
+export function configureEnv() {
     dotenv.config();
 }

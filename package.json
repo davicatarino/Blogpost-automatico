@@ -1,50 +1,108 @@
 {
-    "scripts": {
+
+  "scripts": {
+
     "dev": "next dev",
+
     "build": "next build",
+
     "start": "next start",
-    "scrape": "node scrape.js",
+
     "build-post": "tsc ./src/lib/generatePost.ts",
+
+    "build-scrape": "tsc ./src/lib/scrape2.ts",
+
+    "run-scrape": "ts-node --esm ./src/lib/scrape2.js",
+
     "build-scheduler": "tsc ./src/lib/schedule.ts",
+
     "generate-post": "ts-node ./generatePost.ts",
+
     "start-scheduler": "ts-node ./src/lib/schedule.js",
+
     "pm2-start-scheduler": "pm2 start ecosystem.config.js",
+
     "stop-scheduler": "pm2 stop post-scheduler",
+
     "restart-scheduler": "pm2 restart post-scheduler",
+
     "delete-scheduler": "pm2 delete post-scheduler",
+
     "save-pm2": "pm2 save",
+
     "startup-pm2": "pm2 startup"
+
   },
+
   "dependencies": {
+
     "axios": "^1.7.7",
+
     "cheerio": "^1.0.0",
+
     "classnames": "^2.5.1",
+
     "date-fns": "^3.6.0",
+
     "dotenv": "^16.4.5",
+
+    "googleapis": "^144.0.0",
+
     "gray-matter": "^4.0.3",
+
     "lucide-react": "^0.453.0",
+
     "next": "latest",
+
     "node-cron": "^3.0.3",
+
     "openai": "^4.68.2",
+
     "react": "^18.3.1",
+
     "react-dom": "^18.3.1",
+
     "react-slick": "^0.30.2",
+
     "remark": "^15.0.1",
+
     "remark-html": "^16.0.1",
+
     "rss-parser": "^3.13.0",
+
     "slick-carousel": "^1.8.1",
+
     "swiper": "^11.1.14"
+
   },
+
   "devDependencies": {
+
     "@types/node": "^20.17.2",
+
     "@types/node-cron": "^3.0.11",
+
     "@types/react": "^18.3.3",
+
     "@types/react-dom": "^18.3.0",
+
+    "@types/react-slick": "^0.23.13",
+
     "autoprefixer": "^10.4.19",
+
     "postcss": "^8.4.38",
+
     "sucrase": "^3.35.0",
+
     "tailwindcss": "^3.4.4",
+
     "ts-node": "^10.9.2",
+
+    "tsconfig-paths": "^4.2.0",
+
     "typescript": "^5.6.3"
+
   }
+
 }
+

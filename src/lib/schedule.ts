@@ -1,7 +1,7 @@
 // scheduler.ts
 import { schedule } from 'node-cron';
 import * as dotenv from 'dotenv';
-import {main}  from './generatePost';
+import {main}  from './scrape';
 dotenv.config();
 
 // Agendar para executar a cada 6 horas
