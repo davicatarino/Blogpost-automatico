@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blogpost-automatico-andre
+    ports:
+      - "3002:3004"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=https://tournostress.com
+      - G1_RSS_FEED=https://g1.globo.com/rss/g1/saude/
+      - BLOG_POSTS_DIR=./_posts
+      - GG_API=AIzaSyA4lIcrp5tKYUHZfoOfK6NW8sxtaXpXcmg
+      - GG_CLIENT=869282489509-eg2qfrk3irv615r38jesn82mbd7joqhg.apps.googleusercontent.com
+      - GG_CLIENT_KEY=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
+    volumes:
+      - ./:/src
+    command: npm start
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.scheduler
+    container_name: blogpost-automatico-scheduler
+    working_dir: /app
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=https://tournostress.com
+      - G1_RSS_FEED=https://g1.globo.com/rss/g1/saude/
+      - BLOG_POSTS_DIR=./_posts
+      - GG_API=AIzaSyA4lIcrp5tKYUHZfoOfK6NW8sxtaXpXcmg
+      - GG_CLIENT=869282489509-eg2qfrk3irv615r38jesn82mbd7joqhg.apps.googleusercontent.com
+      - GG_CLIENT_KEY=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
+    volumes:
+      - ./:/src
+    command: ["node", "--loader", "ts-node/esm", "/app/dist/lib/schedule.mjs"]

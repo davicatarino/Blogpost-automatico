@@ -7,7 +7,7 @@ const TOKEN_PATH = path.join(process.cwd(), 'token.json');
 const oauth2Client = new google.auth.OAuth2(
   process.env.GG_CLIENT,
   process.env.GG_CLIENT_KEY,
-  'http://localhost:3000/api/google-callback'
+  'http://localhost:3004/api/google-callback'
 );
 
 // Carrega tokens existentes, se houver

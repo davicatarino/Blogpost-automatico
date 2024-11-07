@@ -1,0 +1,32 @@
+# Dockerfile.scheduler
+
+# Etapa de build
+FROM node:18 AS builder
+
+WORKDIR /app
+
+# Copie o package.json e package-lock.json
+COPY package.json package-lock.json ./
+
+# Instale as dependências
+RUN npm install
+
+# Copie o código da aplicação
+COPY . .
+
+# Compile o TypeScript para JavaScript
+RUN npm run build
+
+# Etapa de produção
+FROM node:18
+
+WORKDIR /app
+
+# Copie apenas o necessário para produção
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/package-lock.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+
+# Defina o CMD para rodar o scheduler como ES Module
+CMD ["node", "--loader", "ts-node/esm", "/dist/lib/schedule.mjs"]

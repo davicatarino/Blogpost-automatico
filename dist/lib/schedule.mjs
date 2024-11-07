@@ -1,4 +1,5 @@
-import { main } from './scrape.js';
+import pkg from './scrape.js';
+const { main } = pkg;
 
 // Restante do código
 import { schedule } from 'node-cron';
